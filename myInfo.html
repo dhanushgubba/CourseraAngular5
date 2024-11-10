@@ -1,0 +1,13 @@
+<div class="my-info">
+    <h2>My Info</h2>
+    <div ng-if="user">
+        <p><strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone Number:</strong> {{ user.phone }}</p>
+        <p><strong>Favorite Dish:</strong> {{ user.favoriteDish }}</p>
+    </div>
+    <div ng-if="!user">
+        <p>{{ message }}</p>
+        <a href="#/signUp">Sign Up Now!</a>
+    </div>
+</div>

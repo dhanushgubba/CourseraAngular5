@@ -1,0 +1,31 @@
+<div class="sign-up-form">
+    <h2>Sign Up for Our Newsletter</h2>
+    <form name="signUpForm" ng-submit="submitForm()">
+        <label>First Name:
+            <input type="text" ng-model="user.firstName" required>
+        </label><br>
+
+        <label>Last Name:
+            <input type="text" ng-model="user.lastName" required>
+        </label><br>
+
+        <label>Email:
+            <input type="email" ng-model="user.email" required>
+        </label><br>
+
+        <label>Phone Number:
+            <input type="tel" ng-model="user.phone" required>
+        </label><br>
+
+        <label>Favorite Dish (Menu Number):
+            <input type="text" ng-model="user.favoriteDish" ng-blur="checkMenuNumber(user.favoriteDish)" required>
+        </label><br>
+        <span class="error" ng-if="favoriteDishError">{{ favoriteDishError }}</span><br>
+
+        <button type="submit" ng-disabled="signUpForm.$invalid">Submit</button>
+    </form>
+
+    <div ng-if="savedMessage">
+        <p>{{ savedMessage }}</p>
+    </div>
+</div>
